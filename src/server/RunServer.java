@@ -14,8 +14,8 @@ public class RunServer {
 		try
 		{
 			ServerImpl server = new ServerImpl();
-			Registry registry = LocateRegistry.createRegistry(2000);
-			registry.bind("bind", server);
+			Registry registry = LocateRegistry.createRegistry(2002);
+			registry.bind("BD_Personas", server);
 			System.out.println("Server up!");
 			
 			

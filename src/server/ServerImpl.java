@@ -22,7 +22,7 @@ public class ServerImpl extends UnicastRemoteObject  implements InterfazDeServer
 	public ServerImpl() throws RemoteException
 	{
 		super();
-		
+		BD = new ArrayList<Persona>();
 		
 	}
 	
