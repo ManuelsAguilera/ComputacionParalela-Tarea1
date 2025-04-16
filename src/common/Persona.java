@@ -16,6 +16,10 @@ public class Persona implements Serializable {
 		this.nombre = nombre;
 	}
 
+	public Persona() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getEdad() {
 		return edad;
 	}

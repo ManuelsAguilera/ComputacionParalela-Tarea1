@@ -8,5 +8,6 @@ public interface InterfazDeServer extends  Remote {
 	
 	//Metodos de interfaz
 	public ArrayList<Persona> getPersonas() throws RemoteException;
-	public void persona(String nombre, int edad) throws RemoteException;
+	public void insertPersona(String nombre, int edad) throws RemoteException;
+	public boolean removePersona(String nombre,int edad) throws RemoteException;
 }
