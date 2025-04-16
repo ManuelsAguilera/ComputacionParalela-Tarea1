@@ -1,21 +1,50 @@
 package server;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import common.*;
 
-public class ServerImpl implements InterfazDeServer {
+public class ServerImpl extends UnicastRemoteObject  implements InterfazDeServer {
 
-	@Override
-	public ArrayList<Persona> getPersonas() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	private ArrayList<Persona> BD; 
+	
+	private void printBD()
+	{
+		System.out.println("[");
+		for (Persona persona : this.BD)
+		{
+			System.out.println("Nombre: "+persona.getNombre() + " edad " + persona.getEdad());
+		}
+		System.out.println("]");
 	}
-
-	@Override
-	public void persona(String nombre, int edad) throws RemoteException {
-		// TODO Auto-generated method stub
+	
+	public ServerImpl() throws RemoteException
+	{
+		super();
+		
 		
 	}
+	
+	@Override
+	public ArrayList<Persona> getPersonas() throws RemoteException {
+		//Loggear para avisar en servidor
+		System.out.println("Base de datos entregada a cliente");
+		return BD;
+	}
+
+	@Override
+	public void persona(String nombre, int edad) throws RemoteException {		
+		BD.add(new Persona(nombre,edad));
+		//Loggear para avisar en servidor
+		System.out.println("BD servidor modificada. Mostrando cambios:");
+		System.out.println("Nueva persona: "+ nombre +" edad " +edad);
+		printBD();
+		
+	}
+		
+	
+		
+	
 
 }

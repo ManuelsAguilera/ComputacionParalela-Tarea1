@@ -4,18 +4,8 @@ import java.util.ArrayList;
 
 import common.*;
 
-public class Client implements InterfazDeServer {
+public class Client {
 
-	@Override
-	public ArrayList<Persona> getPersonas() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void persona(String nombre, int edad) throws RemoteException {
-		// TODO Auto-generated method stub
-		
-	}
-
+	InterfazDeServer server;
+	
 }
